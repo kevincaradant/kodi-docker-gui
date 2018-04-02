@@ -10,6 +10,8 @@ docker build -t kodi-docker-gui.
 ## First run
 Prior first start, allow xhost:   
 ```bash   
+DISPLAY=:0.0
+export DISPLAY
 xhost +local:docker   
 ```
 
