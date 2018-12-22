@@ -1,7 +1,7 @@
 version: "3.0"
 services:
   kodi:
-    image: kevin31/kodi_gui
+    image: kevin31/kodi-docker-gui
     environment:
       - DISPLAY
     ports:
