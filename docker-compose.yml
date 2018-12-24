@@ -21,7 +21,6 @@ services:
       - /etc/sudoers.d:/etc/sudoers.d:ro
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
       - $HOST_PATH:/root/.kodi:rw
-      - /media/pc/storage:/media/pc/Backup4T1:ro
       - /dev/lirc0:/dev/lirc0:rw
       - /dev/lircd:/dev/lircd:rw
     privileged: true
