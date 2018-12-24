@@ -1,18 +1,28 @@
+
 version: "3.0"
 services:
   kodi:
     image: kevin31/kodi-docker-gui
+    container_name: kodi-docker-gui
     environment:
       - DISPLAY
     ports:
       - $PORT:$PORT
+    restart: always
     devices:
       - /dev/snd
       - /dev/dri
     volumes:
+      - /run/dbus/:/run/dbus/:rw
+      - /dev/shm/:/dev/shm/:rw
       - /etc/group:/etc/group:ro
       - /etc/passwd:/etc/passwd:ro
       - /etc/shadow:/etc/shadow:ro
       - /etc/sudoers.d:/etc/sudoers.d:ro
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
-      - $HOST_PATH:/root/.kodi:rw
+      - /home/pc/.kodi:/root/.kodi:rw
+      - /media/pc/storage:/media/pc/Backup4T1:ro
+      - /dev/lirc0:/dev/lirc0:rw
+      - /dev/lircd:/dev/lircd:rw
+    privileged: true
+    network_mode: host
