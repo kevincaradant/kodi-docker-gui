@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER kevinosorus <kevin.caradant@gmail.com
+MAINTAINER kevinosorus <kevin.caradant@gmail.com>
 RUN apt-get update && apt-get upgrade -y && apt-get install -y software-properties-common tzdata debconf-utils
 
 #lirc
